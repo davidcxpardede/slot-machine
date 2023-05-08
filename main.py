@@ -1,11 +1,12 @@
+#Importing Required Library
 import random
 
 #Defining Global Variables
-MAX_LINES = 3
-MAX_BET = 1000
-MIN_BET = 1
-ROWS = 3
-COLS = 3
+MAX_LINES = 3       #Maximum Number of Lines
+MAX_BET = 1000      #Maximum Value of Bet
+MIN_BET = 1         #Minimum Value of Bet
+ROWS = 3            #Rows of Slot Machine
+COLS = 3            #Columns of Slot Machine
 
 #Defining Available Symbols
 symbol_count = {
@@ -15,6 +16,7 @@ symbol_count = {
     "D": 8
 }
 
+#Defining Winnings for Each Symbols
 symbol_value = {
     "A": 5,
     "B": 4,
@@ -114,6 +116,7 @@ def get_bet():
             
     return amount  
 
+#Executing a Spin
 def spin(balance):
     lines = get_number_of_lines()
     while True:
@@ -134,7 +137,7 @@ def spin(balance):
     
     return winnings - total_bet
 
-#Executing the Main Program
+#Executing the Whole Game
 def main():
     balance = deposit()
     while True:
